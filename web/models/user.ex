@@ -3,6 +3,9 @@ defmodule Werewolf.User do
 
   schema "users" do
     field :name, :string
+    has_many :roles, Role
+
+    has_many :roles_games, through: [:roles, :game]
 
     timestamps
   end

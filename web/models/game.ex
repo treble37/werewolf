@@ -3,6 +3,9 @@ defmodule Werewolf.Game do
 
   schema "games" do
     field :slug, :string
+    has_many :roles, Role
+
+    has_many :roles_users, through: [:roles, :user]
 
     timestamps
   end
